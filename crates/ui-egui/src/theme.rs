@@ -506,6 +506,9 @@ pub fn mono(size: f32) -> FontId {
 pub fn apply(ctx: &egui::Context, kind: ThemeKind) {
     let t = Tokens::for_kind(kind);
     ctx.data_mut(|d| d.insert_temp(egui::Id::new("photocraft-theme"), t));
+    // Pin egui's theme so a system `prefers-color-scheme` change cannot swap in the stock visuals
+    // of the other mode: only the active mode is styled below.
+    ctx.set_theme(if t.dark() { egui::Theme::Dark } else { egui::Theme::Light });
     let mut v = if t.dark() { Visuals::dark() } else { Visuals::light() };
     v.panel_fill = t.chrome;
     v.window_fill = t.card;

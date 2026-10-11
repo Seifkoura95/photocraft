@@ -7,7 +7,6 @@ use photocraft_codecs::{ChannelLayout, EncodeOptions, Image};
 use photocraft_doc::Document;
 #[cfg(not(feature = "simplehub"))]
 use photocraft_engine::Session;
-#[cfg(not(feature = "simplehub"))]
 use photocraft_ui_egui::theme::ThemeKind;
 use photocraft_ui_egui::{FileDialogAnswer, FileDialogRequest, PhotocraftApp, Services};
 use wasm_bindgen::JsCast as _;
@@ -67,7 +66,7 @@ pub fn start() {
                     }
                     let unsaved = Arc::new(AtomicBool::new(false));
                     guard_unload(unsaved.clone());
-                    Ok(Box::new(WebShell { app, inbox, unsaved }))
+                    Ok(Box::new(WebShell { app, inbox, unsaved, theme: Default::default() }))
                 }),
             )
             .await;
@@ -134,6 +133,24 @@ fn query() -> String {
     web_sys::window().and_then(|w| w.location().search().ok()).unwrap_or_default()
 }
 
+/// A theme change requested from outside the frame loop (SimpleHub's `set_theme`). `pending` is
+/// taken by the shell on its next frame; `ctx` lets the requester ask for that frame.
+#[derive(Default)]
+struct ThemeLink {
+    pending: std::cell::Cell<Option<ThemeKind>>,
+    ctx: std::cell::RefCell<Option<egui::Context>>,
+}
+
+impl ThemeLink {
+    #[cfg_attr(not(feature = "simplehub"), allow(dead_code))]
+    fn request(&self, kind: ThemeKind) {
+        self.pending.set(Some(kind));
+        if let Some(ctx) = self.ctx.borrow().as_ref() {
+            ctx.request_repaint();
+        }
+    }
+}
+
 /// Wraps the app to read dropped files asynchronously (browsers can't read them synchronously,
 /// so the app's own drop path can't handle them) and feed them through the inbox.
 struct WebShell {
@@ -141,6 +158,7 @@ struct WebShell {
     inbox: Inbox,
     /// Read by the `beforeunload` listener ([`guard_unload`]).
     unsaved: Arc<AtomicBool>,
+    theme: std::rc::Rc<ThemeLink>,
 }
 
 impl eframe::App for WebShell {
@@ -161,6 +179,11 @@ impl eframe::App for WebShell {
             });
         }
         self.app.logic(ctx, frame);
+        // After `app.logic`: its first frame loads the saved preferences, and a theme asked for
+        // by the host must win over the saved one. The style change still precedes `ui`.
+        if let Some(kind) = self.theme.pending.take() {
+            photocraft_ui_egui::prefs_ui::choose_theme(&mut self.app, ctx, kind);
+        }
         self.unsaved.store(self.app.has_unsaved_work(), Ordering::Relaxed);
     }
 

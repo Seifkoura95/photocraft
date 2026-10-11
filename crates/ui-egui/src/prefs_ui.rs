@@ -91,6 +91,20 @@ fn theme_pref(k: ThemeKind) -> Theme {
     }
 }
 
+/// Picks `kind` as the interface theme from outside Preferences (the host page, say): applied
+/// now and stored as the preference, so the per-frame sync in [`tick`] keeps it rather than
+/// restoring the saved one.
+pub fn choose_theme(app: &mut PhotocraftApp, ctx: &egui::Context, kind: ThemeKind) {
+    let pref = theme_pref(kind);
+    if app.session.prefs().interface.theme != pref {
+        app.session.prefs.edit(|p| p.interface.theme = pref);
+    }
+    app.prefs_rt.theme_pref = Some(pref);
+    if app.ui.theme != kind {
+        app.set_theme(ctx, kind);
+    }
+}
+
 // ------------------------------------------------------------------ lifecycle
 
 /// Load saved preferences (once) and recover autosaved documents. Called when the app is
