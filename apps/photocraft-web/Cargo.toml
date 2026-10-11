@@ -10,6 +10,8 @@ publish = false
 # Open HEIC/HEIF photos (the optional photocraft-heif crate). Not default so distributors choose
 # it; official builds (CI, packaging/, release) build with `--features heif`.
 heif = ["photocraft-codecs/heif"]
+# Simple Photo inside SimpleHub: no auto-start, files go through the JS bridge.
+simplehub = ["photocraft-ui-egui/simplehub"]
 
 [lints]
 workspace = true

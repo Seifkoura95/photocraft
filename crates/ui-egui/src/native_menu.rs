@@ -27,7 +27,7 @@ use crate::PhotocraftApp;
 use crate::i18n::{Lang, tr, tr_id};
 use crate::menus::MenuItem;
 
-pub const APP_NAME: &str = "PhotoCraft";
+pub use crate::APP_NAME;
 
 #[derive(Clone, Debug, Default, PartialEq)]
 pub struct MenuBar {
@@ -549,7 +549,7 @@ fn translate(bar: &mut MenuBar, lang: Lang) {
     fn walk(nodes: &mut [Node], lang: Lang) {
         for n in nodes {
             match n {
-                Node::Item(it) if it.role.is_none() => it.label = tr_id(lang, &it.id, &it.label).to_string(),
+                Node::Item(it) if it.role.is_none() => it.label = crate::branded(tr_id(lang, &it.id, &it.label)).into_owned(),
                 Node::Submenu { label, children, role } => {
                     if role.is_none() {
                         *label = tr(lang, label).to_string();

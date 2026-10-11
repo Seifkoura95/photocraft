@@ -14,6 +14,18 @@ macro_rules! tl {
     };
 }
 
+/// The name shown to the user in titles, message boxes and the About dialog.
+/// The `simplehub` feature builds the app as Simple Photo inside SimpleHub.
+pub const APP_NAME: &str = if cfg!(feature = "simplehub") { "Simple Photo" } else { "PhotoCraft" };
+
+/// `s` (menu label, dialog title, notice line: usually just translated) with [`APP_NAME`] in place
+/// of "PhotoCraft". The translation catalogues are keyed by their English text, which names
+/// PhotoCraft, so the SimpleHub build renames after translating and every language keeps its
+/// strings. The default build returns `s` unchanged.
+pub fn branded(s: &str) -> std::borrow::Cow<'_, str> {
+    if cfg!(feature = "simplehub") && s.contains("PhotoCraft") { s.replace("PhotoCraft", APP_NAME).into() } else { s.into() }
+}
+
 pub mod actions;
 pub mod adjust_dialog;
 pub mod adjust_editors;

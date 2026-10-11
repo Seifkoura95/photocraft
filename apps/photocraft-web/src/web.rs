@@ -5,21 +5,29 @@ use std::sync::{Arc, Mutex};
 
 use photocraft_codecs::{ChannelLayout, EncodeOptions, Image};
 use photocraft_doc::Document;
+#[cfg(not(feature = "simplehub"))]
 use photocraft_engine::Session;
+#[cfg(not(feature = "simplehub"))]
 use photocraft_ui_egui::theme::ThemeKind;
 use photocraft_ui_egui::{FileDialogAnswer, FileDialogRequest, PhotocraftApp, Services};
 use wasm_bindgen::JsCast as _;
+
+#[cfg(feature = "simplehub")]
+pub mod simplehub;
 
 type Inbox = Arc<Mutex<Vec<(String, Vec<u8>)>>>;
 
 /// Everything File › Open reads: PhotoCraft and Photoshop documents, flat images, and Photoshop
 /// brushes (.abr), gradients (.grd) and swatches (.aco, .ase), which go to the preset libraries.
+#[cfg(not(feature = "simplehub"))]
 const OPEN_EXTS: &[&str] = &[
     "pcraft", "psd", "psb", "psdt", "png", "jpg", "jpeg", "tif", "tiff", "webp", "gif", "bmp", "tga", "ico", "qoi", "exr", "hdr", "pbm", "pgm", "ppm", "pam",
     "pfm", "heic", "heif", "hif", "dng", "cr2", "cr3", "nef", "nrw", "arw", "pef", "orf", "rw2", "raf", "abr", "grd", "svg", "svgz", "aco", "ase",
 ];
+#[cfg(not(feature = "simplehub"))]
 const CANVAS_ID: &str = "photocraft_canvas";
 
+#[cfg(not(feature = "simplehub"))]
 pub fn start() {
     eframe::WebLogger::init(log::LevelFilter::Info).ok();
     wasm_bindgen_futures::spawn_local(async {
@@ -66,7 +74,7 @@ pub fn start() {
         if let Some(el) = document.get_element_by_id("photocraft_loading") {
             match result {
                 Ok(()) => el.remove(),
-                Err(e) => el.set_inner_html(&format!("<p>PhotoCraft failed to start: {e:?}</p><p>A browser with WebGPU or WebGL2 is required.</p>")),
+                Err(e) => el.set_inner_html(&format!("<p>{} failed to start: {e:?}</p><p>A browser with WebGPU or WebGL2 is required.</p>", photocraft_ui_egui::APP_NAME)),
             }
         }
     });
@@ -105,6 +113,7 @@ fn listen_pen(target: &web_sys::HtmlCanvasElement, feed: photocraft_ui_egui::sty
 /// Closing or reloading the tab while a document has unsaved changes asks first, as closing the
 /// desktop window does: the browser shows its own "Leave site?" prompt (#1380). `unsaved` is
 /// refreshed every frame by [`WebShell`].
+#[cfg(not(feature = "simplehub"))]
 fn guard_unload(unsaved: Arc<AtomicBool>) {
     use wasm_bindgen::closure::Closure;
     let Some(window) = web_sys::window() else { return };
@@ -120,6 +129,7 @@ fn guard_unload(unsaved: Arc<AtomicBool>) {
     }
 }
 
+#[cfg(not(feature = "simplehub"))]
 fn query() -> String {
     web_sys::window().and_then(|w| w.location().search().ok()).unwrap_or_default()
 }
@@ -159,7 +169,36 @@ impl eframe::App for WebShell {
     }
 }
 
+/// The standalone page's services: the shared ones plus the browser's file picker and downloads.
+#[cfg(not(feature = "simplehub"))]
 fn services(inbox: Inbox) -> Services {
+    Services {
+        file_dialog: Some(Box::new(|request, _parent, reply| match request {
+            // The browser's file picker hands over the file's contents, not a path.
+            FileDialogRequest::Open { .. } => wasm_bindgen_futures::spawn_local(async move {
+                let picked = rfd::AsyncFileDialog::new().add_filter("All Formats", OPEN_EXTS).pick_file().await;
+                let answer = match picked {
+                    Some(file) => Some(FileDialogAnswer::Contents(file.file_name(), file.read().await)),
+                    None => None,
+                };
+                reply.send(answer);
+            }),
+            // No save dialog on the web: the suggested name becomes the download name.
+            FileDialogRequest::Save { suggested } => reply.send(Some(FileDialogAnswer::SaveTo(file_name(&suggested)))),
+        })),
+        write: Some(Box::new(|path: &str, bytes: &[u8]| download(path, bytes))),
+        ..common_services(inbox)
+    }
+}
+
+/// The last component of `path` (the whole of it when there is none): a page has names, not paths.
+fn file_name(path: &str) -> String {
+    std::path::Path::new(path).file_name().map_or_else(|| path.to_string(), |n| n.to_string_lossy().to_string())
+}
+
+/// Services every web build shares: codecs, the browser eyedropper, the drop inbox and
+/// preferences in localStorage. File dialogs and writes depend on who hosts the page.
+fn common_services(inbox: Inbox) -> Services {
     Services {
         screen_pick: screen_color_service(),
         import: Some(Box::new(|name: &str, bytes: &[u8]| photocraft_io::import(name, bytes).map(|r| (r.document, r.warnings)).map_err(|e| e.to_string()))),
@@ -176,23 +215,6 @@ fn services(inbox: Inbox) -> Services {
             opts.xmp = if settings.xmp_all { photocraft_io::XmpEmbed::All } else { photocraft_io::XmpEmbed::None };
             photocraft_io::export(doc, path, &opts).map(|r| (r.bytes, r.warnings)).map_err(|e| e.to_string())
         })),
-        file_dialog: Some(Box::new(|request, _parent, reply| match request {
-            // The browser's file picker hands over the file's contents, not a path.
-            FileDialogRequest::Open { .. } => wasm_bindgen_futures::spawn_local(async move {
-                let picked = rfd::AsyncFileDialog::new().add_filter("All Formats", OPEN_EXTS).pick_file().await;
-                let answer = match picked {
-                    Some(file) => Some(FileDialogAnswer::Contents(file.file_name(), file.read().await)),
-                    None => None,
-                };
-                reply.send(answer);
-            }),
-            // No save dialog on the web: the suggested name becomes the download name.
-            FileDialogRequest::Save { suggested } => {
-                let name = std::path::Path::new(&suggested).file_name().map_or_else(|| suggested.clone(), |n| n.to_string_lossy().to_string());
-                reply.send(Some(FileDialogAnswer::SaveTo(name)));
-            }
-        })),
-        write: Some(Box::new(|path: &str, bytes: &[u8]| download(path, bytes))),
         encode_png: Some(Box::new(|w, h, rgba| {
             let img = Image::from_u8(w, h, ChannelLayout::Rgba, rgba.to_vec()).map_err(|e| e.to_string())?;
             photocraft_codecs::encode(&img, photocraft_codecs::Format::Png, &EncodeOptions::default()).map_err(|e| e.to_string())
@@ -212,9 +234,10 @@ fn local_storage() -> Option<web_sys::Storage> {
 }
 
 /// Trigger a browser download of `bytes` named after the last component of `path`.
+#[cfg(not(feature = "simplehub"))]
 fn download(path: &str, bytes: &[u8]) -> Result<(), String> {
     let js = |e: wasm_bindgen::JsValue| format!("{e:?}");
-    let name = std::path::Path::new(path).file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_else(|| "photocraft".into());
+    let name = file_name(path);
     let window = web_sys::window().ok_or("no window")?;
     let document = window.document().ok_or("no document")?;
     let parts = js_sys::Array::of1(&js_sys::Uint8Array::from(bytes));
@@ -238,6 +261,7 @@ fn download(path: &str, bytes: &[u8]) -> Result<(), String> {
     Ok(())
 }
 
+#[cfg(not(feature = "simplehub"))]
 fn mime_for(name: &str) -> &'static str {
     match name.rsplit('.').next().map(str::to_ascii_lowercase).as_deref() {
         Some("png") => "image/png",

@@ -528,7 +528,7 @@ fn save_for_web(app: &mut PhotocraftApp, p: Value) -> Result<Value, String> {
 pub fn open_print(app: &mut PhotocraftApp) -> u64 {
     let mut f = Map::new();
     f.insert("__print".into(), json!(true));
-    f.insert("__label".into(), json!("PhotoCraft Print Settings"));
+    f.insert("__label".into(), json!(format!("{} Print Settings", crate::APP_NAME)));
     if let Some(Value::Object(m)) = app.session.file_menu.last_print.clone() {
         f.extend(m);
     }
@@ -644,6 +644,7 @@ fn print_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, f: &mut Map<String, Va
                 dropdown_str(ui, "print-orient", f, "orientation", &[("portrait", tl!("Portrait")), ("landscape", tl!("Landscape"))], 110.0);
             });
             head(ui, tl!("Color Management"));
+            let app_manages = crate::branded(tl!("PhotoCraft Manages Colors"));
             dropdown_str(
                 ui,
                 "print-color",
@@ -651,7 +652,7 @@ fn print_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, f: &mut Map<String, Va
                 "colorHandling",
                 &[
                     ("printerManages", tl!("Printer Manages Colors")),
-                    ("photocraftManages", tl!("PhotoCraft Manages Colors")),
+                    ("photocraftManages", &*app_manages),
                     ("noColorManagement", tl!("No Color Management")),
                 ],
                 240.0,

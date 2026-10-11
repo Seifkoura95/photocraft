@@ -634,7 +634,7 @@ fn translated_menu_label(lang: crate::i18n::Lang, item: &MenuItem) -> String {
     {
         return crate::i18n::tr_id(lang, &item.id, "Quick Export as PNG").replace("PNG", fmt);
     }
-    crate::i18n::tr_id(lang, &item.id, &item.label).to_string()
+    crate::branded(crate::i18n::tr_id(lang, &item.id, &item.label)).into_owned()
 }
 
 /// Menu tree entry for rendering and for `ui.inspect`.
@@ -691,6 +691,11 @@ pub fn menu_items(app: &PhotocraftApp) -> Vec<MenuItem> {
     // 2) Our commands that Photoshop's tree doesn't list (or lists under another id).
     let mut extra: Vec<MenuItem> = Vec::new();
     for &(id, label, path, sc) in UI_COMMANDS {
+        // SimpleHub: the PhotoCraft community links (Discord, websites, GitHub, issues) stay out of
+        // the Help menu; the About dialog credits the project instead.
+        if cfg!(feature = "simplehub") && crate::links::url_for(id).is_some() {
+            continue;
+        }
         extra.push(MenuItem {
             id: id.into(),
             label: label.into(),

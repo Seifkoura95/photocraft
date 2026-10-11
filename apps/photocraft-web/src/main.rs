@@ -19,10 +19,14 @@
 #[cfg(target_arch = "wasm32")]
 mod web;
 
-#[cfg(target_arch = "wasm32")]
+#[cfg(all(target_arch = "wasm32", not(feature = "simplehub")))]
 fn main() {
     web::start();
 }
+
+/// SimpleHub mounts the app itself through `web::simplehub::start_simple_photo`.
+#[cfg(all(target_arch = "wasm32", feature = "simplehub"))]
+fn main() {}
 
 #[cfg(not(target_arch = "wasm32"))]
 fn main() {

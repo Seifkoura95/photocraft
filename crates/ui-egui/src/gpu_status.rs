@@ -61,7 +61,7 @@ pub fn fall_back(app: &mut PhotocraftApp, fault: &photocraft_gpu::Fault) {
 /// Help › System Info: version, platform and the graphics state.
 pub fn system_info(app: &PhotocraftApp) -> Vec<String> {
     let mut v =
-        vec![format!("PhotoCraft {}", photocraft_engine::build_info::long_version()), format!("Platform: {} {}", std::env::consts::OS, std::env::consts::ARCH)];
+        vec![format!("{} {}", crate::APP_NAME, photocraft_engine::build_info::long_version()), format!("Platform: {} {}", std::env::consts::OS, std::env::consts::ARCH)];
     v.extend(app.perf.gpu_info.lines());
     v.extend(crate::monitor_status::summary_lines(app));
     v
@@ -122,7 +122,7 @@ pub fn show_fallback(app: &mut PhotocraftApp, ctx: &egui::Context) {
         .anchor(egui::Align2::CENTER_CENTER, egui::Vec2::ZERO)
         .show(ctx, |ui| {
             ui.label(egui::RichText::new(tl!("GPU acceleration could not continue. Your documents are unchanged.")).color(t.warning));
-            ui.label(tl!("PhotoCraft is using the CPU image compositor. The window may still use your graphics adapter."));
+            ui.label(crate::branded(tl!("PhotoCraft is using the CPU image compositor. The window may still use your graphics adapter.")).into_owned());
             ui.collapsing(tl!("Details"), |ui| {
                 ui.label(&reason);
             });

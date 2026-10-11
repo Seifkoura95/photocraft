@@ -354,15 +354,18 @@ pub fn title_bar(app: &mut PhotocraftApp, ui: &mut egui::Ui) {
                 let max = ui.ctx().input(|i| i.viewport().maximized.unwrap_or(false));
                 ui.ctx().send_viewport_cmd(egui::ViewportCommand::Maximized(!max));
             }
-            let title = app.session.active().map(|d| format!("{}{}", d.doc.name, if d.is_dirty() { "  •" } else { "" })).unwrap_or_else(|| "PhotoCraft".into());
+            let title = app.session.active().map(|d| format!("{}{}", d.doc.name, if d.is_dirty() { "  •" } else { "" })).unwrap_or_else(|| crate::APP_NAME.into());
             // The menus and the right-hand controls are laid out first; the title is centred in
             // whatever room is left between them, shortened or dropped rather than drawn over them.
             let (mut menus_right, mut controls_left) = (full.left(), full.right());
             ui.horizontal_centered(|ui| {
-                let side = if t.pro { 18.0 } else { 20.0 };
-                let (mark, _) = ui.allocate_exact_size(vec2(side, side), Sense::hover());
-                crate::brand::paint_mark(ui, mark);
-                ui.add_space(6.0);
+                // SimpleHub: the PhotoCraft mark (the kitsune icon) is not open source, so it stays out.
+                if !cfg!(feature = "simplehub") {
+                    let side = if t.pro { 18.0 } else { 20.0 };
+                    let (mark, _) = ui.allocate_exact_size(vec2(side, side), Sense::hover());
+                    crate::brand::paint_mark(ui, mark);
+                    ui.add_space(6.0);
+                }
                 // With the macOS menu bar the menus are at the top of the screen instead.
                 menus_right = if app.services.native_menu.is_some() { ui.cursor().left() } else { crate::menus::menu_bar(app, ui) };
                 // The menu bar takes the whole row, so the right-hand group gets its own rect:

@@ -261,7 +261,7 @@ pub fn show(ctx: &Context) {
         let shared = r.clone();
         let vid = egui::ViewportId::from_hash_of(("screen-color", generation, n));
         let mut builder = egui::ViewportBuilder::default()
-            .with_title("PhotoCraft — Screen Color Picker")
+            .with_title(format!("{} — Screen Color Picker", crate::APP_NAME))
             .with_decorations(false)
             .with_resizable(false)
             .with_position(image.position / ctx.zoom_factor())

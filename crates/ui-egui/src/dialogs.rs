@@ -163,6 +163,18 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                     match chosen {
                         "contributors" => crate::credits::contributors_ui(ui),
                         "models" => crate::credits::models_ui(ui),
+                        _ if cfg!(feature = "simplehub") => {
+                            // SimpleHub build. PhotoCraft is MIT OR Apache-2.0; the licence asks for
+                            // attribution and the ArtCraft/PhotoCraft marks and community links are
+                            // left out (they are not open source).
+                            ui.heading(crate::APP_NAME);
+                            ui.label(crate::i18n::fmt(tl!("Version {version}"), &[("version", &photocraft_engine::build_info::long_version())]));
+                            ui.add_space(6.0);
+                            ui.label("Image editing for SimpleHub. Layers, masks, adjustments, filters, brushes and native PSD.");
+                            ui.add_space(6.0);
+                            ui.label("Built on PhotoCraft, an open source image editor by the ArtCraft Team and the PhotoCraft contributors, used under the MIT or Apache 2.0 licence.");
+                            ui.hyperlink_to("github.com/storytold/photocraft", "https://github.com/storytold/photocraft");
+                        }
                         _ => {
                             ui.label(tl!("PhotoCraft — an open-source, native image editor written in Rust."));
                             ui.label(crate::i18n::fmt(tl!("Version {version}"), &[("version", &photocraft_engine::build_info::long_version())]));
@@ -313,9 +325,9 @@ fn display_title(d: &Dialog) -> String {
             // Dialog labels are catalogued with their "…" ("Export As…"); some commands omit it.
             let with_dots = format!("{}…", label.trim_end_matches('…'));
             let shown = if crate::i18n::has(crate::i18n::current(), label) { tl!(label) } else { tl!(&with_dots) };
-            shown.trim_end_matches('…').to_string()
+            crate::branded(shown.trim_end_matches('…')).into_owned()
         }
-        _ => tl!(&title(d)).to_string(),
+        _ => crate::branded(tl!(&title(d))).into_owned(),
     }
 }
 

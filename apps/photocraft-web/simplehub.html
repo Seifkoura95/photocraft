@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Simple Photo</title>
+  <!-- SimpleHub build of photocraft-web. Only the generated .js and _bg.wasm are shipped;
+       SimpleHub mounts the app itself through `start_simple_photo`. Build from this directory with:
+       trunk build --release --public-url /apps/photo/ --filehash false --dist ../../dist/simplehub simplehub.html -->
+  <link data-trunk rel="rust" data-bin="photocraft-web" data-cargo-profile="wasm-release" data-cargo-features="simplehub" data-wasm-opt="z" data-weak-refs />
+</head>
+<body></body>
+</html>
