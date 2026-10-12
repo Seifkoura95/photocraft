@@ -10,6 +10,8 @@ workspace = true
 [features]
 # Real-file corpus tests (opt-in; `cargo xtask test-corpus`). Fail when the corpus is missing.
 corpus = []
+# SimpleHub build: exported files name Simple Photo as their creator.
+simplehub = ["photocraft-psd/simplehub"]
 
 [dependencies]
 photocraft-geom = { workspace = true }

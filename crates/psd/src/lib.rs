@@ -40,6 +40,11 @@
 #![warn(missing_docs)]
 #![deny(clippy::unwrap_used, clippy::expect_used, clippy::panic, clippy::unimplemented, clippy::todo, clippy::unreachable)]
 
+/// The application named as the writer in files this crate creates (the PSD version info
+/// resource) and, through the engine, as the creator of other exports. The `simplehub` feature
+/// builds the app as Simple Photo.
+pub const PRODUCT_NAME: &str = if cfg!(feature = "simplehub") { "Simple Photo" } else { "PhotoCraft" };
+
 pub mod abr;
 pub mod aco;
 pub mod ase;

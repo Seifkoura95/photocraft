@@ -105,7 +105,7 @@ fn block_order(rest: &[u8]) -> Result<ByteOrder> {
         None | Some(b"8BIM") | Some(b"8B64") => Ok(ByteOrder::Big),
         Some(b"MIB8") | Some(b"46B8") => Ok(ByteOrder::Little),
         Some(other) => {
-            Err(PsdError::InvalidSignature { expected: "8BIM or MIB8 (Photoshop image source data block)", found: [other[0], other[1], other[2], other[3]] })
+            Err(PsdError::InvalidSignature { expected: "8BIM or MIB8 (PSD image source data block)", found: [other[0], other[1], other[2], other[3]] })
         }
     }
 }
@@ -117,7 +117,7 @@ impl ImageSourceData {
         let (version, rest) = match data.get(..36) {
             Some(s) if s == SIGNATURE => (Version::Psd, &data[36..]),
             Some(s) if s == SIGNATURE_PSB => (Version::Psb, &data[36..]),
-            _ => return Err(PsdError::invalid("not Photoshop image source data (missing \"Adobe Photoshop Document Data Block\")")),
+            _ => return Err(PsdError::invalid("not PSD image source data (missing the document data block signature)")),
         };
         let byte_order = block_order(rest)?;
         let mut warnings = Vec::new();

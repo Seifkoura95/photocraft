@@ -53,7 +53,7 @@
 	Layer Comps to Files…	Composizioni livelli in file…
 	Color Lookup Tables…	Tabelle ricerca colore…
 	Data Sets as Files…	Set di dati come file…
-	Paths to Illustrator…	Tracciati in Illustrator…
+	Paths to AI File…	Tracciati in file AI…
 	Render Video…	Rendering video…
 	Generate	Genera
 	Image Assets	Risorse immagine
@@ -752,7 +752,7 @@
 	All Caps	Tutto maiuscolo
 	All Slices	Tutte le sezioni
 	All User Slices	Tutte le sezioni utente
-	All shortcuts reset to Photoshop defaults.	Tutte le scorciatoie ripristinate ai default di Photoshop.
+	All shortcuts reset to defaults.	Tutte le scorciatoie ripristinate ai valori predefiniti.
 	Alt	Alt
 	Always use pressure for opacity	Usa sempre pressione per opacità
 	Always use pressure for size	Usa sempre pressione per dimensione
@@ -1073,7 +1073,7 @@
 	Ignore All	Ignora tutto
 	Image Size	Dimensione immagine
 	Import Brushes…	Importa pennelli…
-	Import Photoshop brushes (.abr)	Importa pennelli Photoshop (.abr)
+	Import brushes (.abr)	Importa pennelli (.abr)
 	Import Presets	Importa predefiniti
 	Imported	Importato
 	Indent First	Rientro primo
@@ -1123,7 +1123,7 @@
 	Liquify is not open	Fluidifica non è aperto
 	Load	Carica
 	Load 3D LUT…	Carica LUT 3D…
-	Load Photoshop brushes (.abr)	Carica pennelli Photoshop (.abr)
+	Load brushes (.abr)	Carica pennelli (.abr)
 	Load channel as selection	Carica canale come selezione
 	Load…	Carica…
 	Localized Color Clusters	Cluster colore localizzati
@@ -1516,7 +1516,7 @@
 	Current Tool	Strumento corrente
 	Custom Shape Tool	Strumento Forma personale
 	Cyans	Ciano
-	Default Photoshop Size	Dimensione predefinita Photoshop
+	Default size	Dimensione predefinita
 	Delete Workspace	Elimina area di lavoro
 	Diamond	Diamante
 	Dimensions:	Dimensioni:
@@ -1715,8 +1715,8 @@
 
 # Preferences (labels are generated from the setting names)
 	Additional plugins folder	Cartella plugin aggiuntiva
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Integrato
+	Adobe RGB (1998)	Adobe RGB (1998)
 	Allow agent control	Consenti controllo agente
 	Allow scripts to connect	Consenti connessione script
 	Always	Sempre

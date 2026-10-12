@@ -257,8 +257,8 @@ pub fn version_info_resource(has_real_merged_data: bool) -> ImageResource {
         VersionInfo {
             version: 1,
             has_real_merged_data,
-            writer: UnicodeString::new_nul("Adobe Photoshop"),
-            reader: UnicodeString::new_nul("Adobe Photoshop CS6"),
+            writer: UnicodeString::new_nul(crate::PRODUCT_NAME),
+            reader: UnicodeString::new_nul(crate::PRODUCT_NAME),
             file_version: 1,
         }
         .to_bytes(),

@@ -30,7 +30,7 @@ pub static CATALOG: &[(&[&str], &str, Option<&str>, &str)] = &[
     (&["File", "Export"], "---", None, "---"),
     (&["File", "Export"], "Color Lookup Tables…", None, "file.export.colorLookupTables"),
     (&["File", "Export"], "Data Sets as Files…", None, "file.export.dataSetsAsFiles"),
-    (&["File", "Export"], "Paths to Illustrator…", None, "file.export.pathsToIllustrator"),
+    (&["File", "Export"], "Paths to AI File…", None, "file.export.pathsToIllustrator"),
     (&["File", "Export"], "Render Video…", None, "file.export.renderVideo"),
     (&["File", "Generate"], "Image Assets", None, "file.generate.imageAssets"),
     (&["File"], "---", None, "---"),

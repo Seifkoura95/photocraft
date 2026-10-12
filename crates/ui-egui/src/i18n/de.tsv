@@ -57,7 +57,7 @@
 	Layer Comps to Files…	Ebenenkompositionen in Dateien…
 	Color Lookup Tables…	Farblookup-Tabellen…
 	Data Sets as Files…	Datensätze als Dateien…
-	Paths to Illustrator…	Pfade nach Illustrator…
+	Paths to AI File…	Pfade als AI-Datei…
 	Render Video…	Video rendern…
 	Generate	Generieren
 	Image Assets	Bild-Assets
@@ -750,7 +750,7 @@
 	All Caps	Großbuchstaben
 	All Slices	Alle Slices
 	All User Slices	Alle Benutzer-Slices
-	All shortcuts reset to Photoshop defaults.	Alle Kurzbefehle wurden auf die Photoshop-Standards zurückgesetzt.
+	All shortcuts reset to defaults.	Alle Kurzbefehle wurden auf die Standardwerte zurückgesetzt.
 	Alt	Alt
 	Always use pressure for opacity	Druck immer für Deckkraft verwenden
 	Always use pressure for size	Druck immer für Größe verwenden
@@ -1073,7 +1073,7 @@
 	Ignore All	Alle ignorieren
 	Image Size	Bildgröße
 	Import Brushes…	Pinsel importieren…
-	Import Photoshop brushes (.abr)	Photoshop-Pinsel (.abr) importieren
+	Import brushes (.abr)	Pinsel (.abr) importieren
 	Import Presets	Vorgaben importieren
 	Imported	Importiert
 	Indent First	Erste Zeile einrücken
@@ -1123,7 +1123,7 @@
 	Liquify is not open	Verflüssigen ist nicht geöffnet
 	Load	Laden
 	Load 3D LUT…	3D-LUT laden…
-	Load Photoshop brushes (.abr)	Photoshop-Pinsel (.abr) laden
+	Load brushes (.abr)	Pinsel (.abr) laden
 	Load channel as selection	Kanal als Auswahl laden
 	Load…	Laden…
 	Localized Color Clusters	Lokalisierte Farbcluster
@@ -1514,7 +1514,7 @@
 	Current Tool	Aktuelles Werkzeug
 	Custom Shape Tool	Werkzeug für benutzerdefinierte Formen
 	Cyans	Cyantöne
-	Default Photoshop Size	Standard-Photoshop-Größe
+	Default size	Standardgröße
 	Delete Workspace	Arbeitsbereich löschen
 	Diamond	Raute
 	Dimensions:	Abmessungen:
@@ -1709,8 +1709,8 @@
 @plural	{n} layer|{n} layers	{n} Ebene|{n} Ebenen
 @plural	Group · {n} layer|Group · {n} layers	Gruppe · {n} Ebene|Gruppe · {n} Ebenen
 	Additional plugins folder	Zusätzlicher Plug-in-Ordner
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Integriert
+	Adobe RGB (1998)	Adobe RGB (1998)
 	Allow agent control	Agentensteuerung erlauben
 	Allow scripts to connect	Skriptverbindungen erlauben
 	Always	Immer

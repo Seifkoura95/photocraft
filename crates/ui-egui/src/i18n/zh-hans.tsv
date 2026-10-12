@@ -53,7 +53,7 @@
 	Layer Comps to Files…	将图层复合导出为文件…
 	Color Lookup Tables…	颜色查找表…
 	Data Sets as Files…	将数据组导出为文件…
-	Paths to Illustrator…	将路径导出到 Illustrator…
+	Paths to AI File…	将路径导出到 AI 文件…
 	Render Video…	渲染视频…
 	Generate	生成
 	Image Assets	图像资源
@@ -137,7 +137,7 @@
 	Histories	历史记录
 	Video Cache	视频缓存
 	All	全部
-	Adobe PDF Presets…	Adobe PDF 预设…
+	PDF Presets…	PDF 预设…
 	Presets	预设
 	Preset Manager…	预设管理器…
 	Migrate Presets	迁移预设
@@ -757,7 +757,7 @@
 	All Caps	全部大写
 	All Slices	所有切片
 	All User Slices	所有用户切片
-	All shortcuts reset to Photoshop defaults.	所有快捷键已重置为 Photoshop 默认值。
+	All shortcuts reset to defaults.	所有快捷键已重置为默认值。
 	Alt	Alt
 	Alt-click to define a source point to clone from	按 Alt 单击以定义仿制源点
 	Always use pressure for opacity	始终用压感控制不透明度
@@ -1081,7 +1081,7 @@
 	Ignore All	全部忽略
 	Image Size	图像大小
 	Import Brushes…	导入画笔…
-	Import Photoshop brushes (.abr)	导入 Photoshop 画笔（.abr）
+	Import brushes (.abr)	导入画笔（.abr）
 	Import Presets	导入预设
 	Imported	已导入
 	Indent First	首行缩进
@@ -1131,7 +1131,7 @@
 	Liquify is not open	尚未打开液化
 	Load	载入
 	Load 3D LUT…	载入 3D LUT…
-	Load Photoshop brushes (.abr)	载入 Photoshop 画笔（.abr）
+	Load brushes (.abr)	载入画笔（.abr）
 	Load channel as selection	将通道载入为选区
 	Load…	载入…
 	Localized Color Clusters	局部颜色簇
@@ -1529,7 +1529,7 @@
 	Current Tool	当前工具
 	Custom Shape Tool	自定形状工具
 	Cyans	青色
-	Default Photoshop Size	默认 Photoshop 大小
+	Default size	默认大小
 	Delete Workspace	删除工作区
 	Diamond	菱形
 	Dimensions:	尺寸：
@@ -1725,8 +1725,8 @@
 @plural	{n} Layer|{n} Layers	{n} 个图层
 @plural	Group · {n} layer|Group · {n} layers	组 · {n} 个图层
 	Additional plugins folder	附加插件文件夹
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	内置
+	Adobe RGB (1998)	Adobe RGB (1998)
 	Allow agent control	允许代理控制
 	Allow scripts to connect	允许脚本连接
 	Always	始终

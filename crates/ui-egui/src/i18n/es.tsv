@@ -53,7 +53,7 @@
 	Layer Comps to Files…	Composiciones de capa en archivos…
 	Color Lookup Tables…	Tablas de búsqueda de color…
 	Data Sets as Files…	Conjuntos de datos en archivos…
-	Paths to Illustrator…	Trazados en formato de Illustrator…
+	Paths to AI File…	Trazados a archivo AI…
 	Render Video…	Renderizar vídeo…
 	Generate	Generar
 	Image Assets	Recursos de imagen
@@ -754,7 +754,7 @@
 	All Caps	Todo en mayúsculas
 	All Slices	Todas las secciones
 	All User Slices	Todas las secciones de usuario
-	All shortcuts reset to Photoshop defaults.	Se restablecieron todos los atajos a los valores predeterminados de Photoshop.
+	All shortcuts reset to defaults.	Se restablecieron todos los atajos a los valores predeterminados.
 	Alt	Alt
 	Always use pressure for opacity	Usar siempre la presión para la opacidad
 	Always use pressure for size	Usar siempre la presión para el tamaño
@@ -1074,7 +1074,7 @@
 	Ignore All	Ignorar todo
 	Image Size	Tamaño de imagen
 	Import Brushes…	Importar pinceles…
-	Import Photoshop brushes (.abr)	Importar pinceles de Photoshop (.abr)
+	Import brushes (.abr)	Importar pinceles (.abr)
 	Import Presets	Importar preajustes
 	Imported	Importado
 	Indent First	Sangría primera
@@ -1124,7 +1124,7 @@
 	Liquify is not open	Licuar no está abierto
 	Load	Cargar
 	Load 3D LUT…	Cargar LUT 3D…
-	Load Photoshop brushes (.abr)	Cargar pinceles de Photoshop (.abr)
+	Load brushes (.abr)	Cargar pinceles (.abr)
 	Load channel as selection	Cargar el canal como selección
 	Load…	Cargar…
 	Localized Color Clusters	Agrupaciones de color localizadas
@@ -1518,7 +1518,7 @@
 	Current Tool	Herramienta actual
 	Custom Shape Tool	Herramienta Forma personalizada
 	Cyans	Cianes
-	Default Photoshop Size	Tamaño predeterminado de Photoshop
+	Default size	Tamaño predeterminado
 	Delete Workspace	Eliminar espacio de trabajo
 	Diamond	Diamante
 	Dimensions:	Dimensiones:
@@ -1717,8 +1717,8 @@
 
 # Preferences (labels are generated from the setting names)
 	Additional plugins folder	Carpeta adicional de complementos
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Integrado
+	Adobe RGB (1998)	Adobe RGB (1998)
 	Allow agent control	Permitir el control por parte de agentes
 	Allow scripts to connect	Permitir que los scripts se conecten
 	Always	Siempre

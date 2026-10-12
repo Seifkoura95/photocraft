@@ -809,6 +809,9 @@ fn choice_label(v: &str) -> String {
         "metal" => "Metal".into(),
         "gl" => "OpenGL".into(),
         "cpu" => "CPU (no GPU acceleration)".into(),
+        // Choice ids stay as stored in preferences files; only the labels are neutral.
+        "adobe" => "Built-in".into(),
+        "adobeRgb" => "Adobe RGB (1998)".into(),
         v => humanize(v),
     }
 }
@@ -1246,7 +1249,7 @@ fn shortcuts_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, f: &mut Map<String
             }
             if ui.button(tl!("Reset All to Defaults")).clicked() {
                 overrides.clear();
-                message = tl!("All shortcuts reset to Photoshop defaults.").into();
+                message = tl!("All shortcuts reset to defaults.").into();
             }
         });
     } else if ui.button(tl!("Show All Menu Items")).clicked() {
@@ -1326,7 +1329,7 @@ fn presets_body(app: &mut PhotocraftApp, ui: &mut egui::Ui, f: &mut Map<String, 
             let _ = app.run("edit.presets.presetManager", json!({"action": "delete", "kind": kind, "index": selected}));
         }
         // Load Photoshop brushes (.abr) into the library.
-        if kind == "brushes" && ui.button(tl!("Load…")).on_hover_text(tl!("Import Photoshop brushes (.abr)")).clicked() {
+        if kind == "brushes" && ui.button(tl!("Load…")).on_hover_text(tl!("Import brushes (.abr)")).clicked() {
             let _ = app.open_dialog_file();
         }
     });

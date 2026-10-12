@@ -474,7 +474,8 @@ pub fn paths_to_ai(doc: &Document, which: &str) -> Result<(String, usize)> {
         name => chosen.extend(doc.paths.iter().filter(|p| p.name == name).map(|p| (p.name.clone(), &p.path))),
     }
     let mut s = String::new();
-    s.push_str("%!PS-Adobe-2.0 EPSF-1.2\n%%Creator: PhotoCraft\n");
+    s.push_str("%!PS-Adobe-2.0 EPSF-1.2\n");
+    s.push_str(&format!("%%Creator: {}\n", photocraft_psd::PRODUCT_NAME));
     s.push_str(&format!("%%Title: ({})\n", doc.name.replace([')', '('], "_")));
     s.push_str(&format!(
         "%%BoundingBox: 0 0 {} {}\n%%HiResBoundingBox: 0 0 {w:.4} {h:.4}\n%AI3_Cropmarks: 0 0 {w:.4} {h:.4}\n",
@@ -572,7 +573,7 @@ pub fn specs() -> Vec<CommandSpec> {
         ),
         spec!(
             "file.export.pathsToIllustrator",
-            "Paths to Illustrator…",
+            "Paths to AI File…",
             &["File", "Export"],
             None,
             r##"{"path":str? (.ai; omit to return the text),"paths":"all|work|<path name>"="all"} → {path, paths}"##,

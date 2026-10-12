@@ -59,7 +59,7 @@
 	Layer Comps to Files…	Compositions de calques en fichiers…
 	Color Lookup Tables…	Tables de correspondance des couleurs…
 	Data Sets as Files…	Jeux de données en fichiers…
-	Paths to Illustrator…	Tracés vers Illustrator…
+	Paths to AI File…	Tracés vers fichier AI…
 	Render Video…	Rendu vidéo…
 	Generate	Générer
 	Image Assets	Ressources d'image
@@ -744,7 +744,7 @@
 	All Caps	Tout en capitales
 	All Slices	Toutes les tranches
 	All User Slices	Toutes les tranches utilisateur
-	All shortcuts reset to Photoshop defaults.	Tous les raccourcis ont été réinitialisés aux valeurs par défaut de Photoshop.
+	All shortcuts reset to defaults.	Tous les raccourcis ont été réinitialisés aux valeurs par défaut.
 	Alt	Alt
 	Always use pressure for opacity	Toujours utiliser la pression pour l'opacité
 	Always use pressure for size	Toujours utiliser la pression pour la taille
@@ -1059,7 +1059,7 @@
 	Ignore All	Tout ignorer
 	Image Size	Taille de l'image
 	Import Brushes…	Importer des pinceaux…
-	Import Photoshop brushes (.abr)	Importer des pinceaux Photoshop (.abr)
+	Import brushes (.abr)	Importer des pinceaux (.abr)
 	Import Presets	Importer des préréglages
 	Imported	Importé
 	Indent First	Retrait de première ligne
@@ -1109,7 +1109,7 @@
 	Liquify is not open	Liquéfier n'est pas ouvert
 	Load	Charger
 	Load 3D LUT…	Charger une LUT 3D…
-	Load Photoshop brushes (.abr)	Charger des pinceaux Photoshop (.abr)
+	Load brushes (.abr)	Charger des pinceaux (.abr)
 	Load channel as selection	Charger le canal comme sélection
 	Load…	Charger…
 	Localized Color Clusters	Groupes de couleurs localisés
@@ -1499,7 +1499,7 @@
 	Current Tool	Outil actif
 	Custom Shape Tool	Outil Forme personnalisée
 	Cyans	Cyans
-	Default Photoshop Size	Taille Photoshop par défaut
+	Default size	Taille par défaut
 	Delete Workspace	Supprimer l'espace de travail
 	Diamond	Losange
 	Dimensions:	Dimensions :
@@ -1692,8 +1692,7 @@
 @plural	{n} layer|{n} layers	{n} calque|{n} calques
 @plural	Group · {n} layer|Group · {n} layers	Groupe · {n} calque|Groupe · {n} calques
 	Additional plugins folder	Dossier d'extensions supplémentaire
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Intégré
 	Allow agent control	Autoriser le pilotage par des agents
 	Allow scripts to connect	Autoriser la connexion des scripts
 	Always	Toujours
@@ -2158,8 +2157,8 @@
 	Roman Hanging Punctuation	Ponctuation latine hors justification
 	Avoid Widows/Orphans	Éviter les veuves et orphelines
 	Compose	Composition
-	Adobe Single-line Composer	Composeur ligne par ligne Adobe
-	Adobe Every-line Composer	Composeur multiligne Adobe
+	Single-line Composer	Composeur ligne par ligne
+	Every-line Composer	Composeur multiligne
 	Justification	Justification
 	Word Spacing	Espacement des mots
 	Letter Spacing	Espacement des lettres
@@ -2174,7 +2173,7 @@
 	Symbols	Symboles
 	Punctuation	Ponctuation
 	Path:	Tracé :
-	Path to Illustrator…	Tracé vers Illustrator…
+	Path to AI File…	Tracé vers fichier AI…
 	Make Work Path	Créer un tracé de travail
 	Make Selection	Créer une sélection
 	Fill Path	Remplir le tracé
@@ -2411,7 +2410,7 @@
 	Intersect with	Intersection avec
 	Capture Comp	Capturer la composition
 	No Layer Comps	Aucune composition de calques
-	Adobe PDF Presets…	Préréglages Adobe PDF…
+	PDF Presets…	Préréglages PDF…
 	3D…	3D…
 	Technology Previews…	Aperçus technologiques…
 	Background from Layer	Arrière-plan d'après le calque

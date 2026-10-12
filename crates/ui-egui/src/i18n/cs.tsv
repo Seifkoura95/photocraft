@@ -61,7 +61,7 @@
 	Layer Comps to Files…	Kompozice vrstev do souborů…
 	Color Lookup Tables…	Převodní tabulky barev…
 	Data Sets as Files…	Datové sady jako soubory…
-	Paths to Illustrator…	Cesty do Illustratoru…
+	Paths to AI File…	Cesty do souboru AI…
 	Render Video…	Renderovat video…
 	Generate	Generovat
 	Image Assets	Obrazové podklady
@@ -769,7 +769,7 @@
 	All Caps	Verzálky
 	All Slices	Všechny řezy
 	All User Slices	Všechny uživatelské řezy
-	All shortcuts reset to Photoshop defaults.	Všechny zkratky byly obnoveny na výchozí hodnoty Photoshopu.
+	All shortcuts reset to defaults.	Všechny zkratky byly obnoveny na výchozí hodnoty.
 	Alt	Alt
 	Always use pressure for opacity	Vždy použít přítlak pro krytí
 	Always use pressure for size	Vždy použít přítlak pro velikost
@@ -1089,7 +1089,7 @@
 	Ignore All	Ignorovat vše
 	Image Size	Velikost obrazu
 	Import Brushes…	Importovat štětce…
-	Import Photoshop brushes (.abr)	Importovat štětce Photoshopu (.abr)
+	Import brushes (.abr)	Importovat štětce (.abr)
 	Import Presets	Importovat přednastavení
 	Imported	Importováno
 	Indent First	Odsazení prvního řádku
@@ -1139,7 +1139,7 @@
 	Liquify is not open	Zkapalnit není otevřeno
 	Load	Načíst
 	Load 3D LUT…	Načíst 3D LUT…
-	Load Photoshop brushes (.abr)	Načíst štětce Photoshopu (.abr)
+	Load brushes (.abr)	Načíst štětce (.abr)
 	Load channel as selection	Načíst kanál jako výběr
 	Load…	Načíst…
 	Localized Color Clusters	Lokalizované shluky barev
@@ -1533,7 +1533,7 @@
 	Current Tool	Aktuální nástroj
 	Custom Shape Tool	Nástroj vlastní tvar
 	Cyans	Azurové
-	Default Photoshop Size	Výchozí velikost
+	Default size	Výchozí velikost
 	Delete Workspace	Odstranit pracovní prostor
 	Diamond	Kosočtverec
 	Dimensions:	Rozměry:
@@ -1732,8 +1732,8 @@
 
 # Preferences (labels are generated from the setting names)
 	Additional plugins folder	Složka dalších zásuvných modulů
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Vestavěný
+	Adobe RGB (1998)	Adobe RGB (1998)
 	Allow agent control	Povolit ovládání agenty
 	Allow scripts to connect	Povolit připojení skriptů
 	Always	Vždy

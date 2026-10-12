@@ -590,7 +590,7 @@
 	Additional plugins folder	Дополнительная папка плагинов
 	Install Plug-in…	Установить плагин…
 	Export Presets	Экспортировать наборы
-	Import Photoshop brushes (.abr)	Импортировать кисти Photoshop (.abr)
+	Import brushes (.abr)	Импортировать кисти (.abr)
 	Migrate Presets	Перенести наборы
 	Thumbnail size (smallest: list)	Размер миниатюр (минимальный: список)
 	Reset GPU Backend	Сбросить GPU-бэкенд
@@ -1043,8 +1043,8 @@
 	Roman Hanging Punctuation	Висячая пунктуация (римская)
 	Avoid Widows/Orphans	Избегать висячих строк
 	Compose	Компоновка
-	Adobe Single-line Composer	Построчная компоновка Adobe
-	Adobe Every-line Composer	Абзацная компоновка Adobe
+	Single-line Composer	Построчная компоновка
+	Every-line Composer	Абзацная компоновка
 	Justification	Выключка
 	Word Spacing	Межсловные интервалы
 	Letter Spacing	Межбуквенные интервалы
@@ -1083,7 +1083,7 @@
 	Path	Контур
 	Path:	Контур:
 	Work Path	Рабочий контур
-	Path to Illustrator…	Контур в Illustrator…
+	Path to AI File…	Контур в файл AI…
 	Make Work Path	Создать рабочий контур
 	Make Selection	Создать выделение
 	Fill Path	Залить контур
@@ -1401,7 +1401,7 @@
 	Art & Illustration	Искусство и иллюстрация
 	Mobile	Мобильные
 	Film & Video	Кино и видео
-	Default Photoshop Size	Размер Photoshop по умолчанию
+	Default size	Размер по умолчанию
 	Clipboard	Буфер обмена
 	Photo (2 × 3 in)	Фото (2 × 3 дюйма)
 	Photo (4 × 6 in)	Фото (4 × 6 дюйма)
@@ -1568,7 +1568,7 @@
 	Yes	Да
 	These settings aren't available in PhotoCraft yet.	Эти параметры пока недоступны в PhotoCraft.
 	Shortcut removed.	Комбинация клавиш удалена.
-	All shortcuts reset to Photoshop defaults.	Все комбинации клавиш сброшены к стандартным Photoshop.
+	All shortcuts reset to defaults.	Все комбинации клавиш сброшены к стандартным.
 	Delete Shortcut	Удалить комбинацию
 	Press keys…	Нажмите клавиши…
 	shortcut	комбинация
@@ -1819,7 +1819,7 @@
 	Other	Другое
 	Other…	Другой…
 	Paragraph Styles Panel	Панель «Стили абзацев»
-	Paths to Illustrator…	Контуры в Illustrator…
+	Paths to AI File…	Контуры в файл AI…
 	Pattern Preview	Предпросмотр паттерна
 	Pattern…	Паттерн…
 	Pixel Art	Пиксель-арт
@@ -2117,8 +2117,7 @@
 	Yellow  ·  Blue	Жёлтый  ·  Синий
 
 # Preference dialog: generated setting labels and dropdown choices
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Встроенный
 	Allow agent control	Разрешить управление агентами
 	Allow scripts to connect	Разрешить подключение сценариев
 	Always	Всегда

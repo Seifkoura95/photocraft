@@ -40,7 +40,7 @@
 	Layer Comps to Files…	Συνθέσεις επιπέδων σε αρχεία…
 	Color Lookup Tables…	Πίνακες αντιστοίχισης χρωμάτων…
 	Data Sets as Files…	Σύνολα δεδομένων σε αρχεία…
-	Paths to Illustrator…	Διαδρομές προς Illustrator…
+	Paths to AI File…	Διαδρομές σε αρχείο AI…
 	Render Video…	Απόδοση βίντεο…
 	Generate	Δημιουργία
 	Image Assets	Πόροι εικόνας
@@ -239,8 +239,8 @@
 	Filter for shape layers	Φιλτράρισμα επιπέδων σχημάτων
 	Filter for type layers	Φιλτράρισμα επιπέδων κειμένου
 	Import Brushes…	Εισαγωγή πινέλων…
-	Import Photoshop brushes (.abr)	Εισαγωγή πινέλων Photoshop (.abr)
-	Load Photoshop brushes (.abr)	Φόρτωση πινέλων Photoshop (.abr)
+	Import brushes (.abr)	Εισαγωγή πινέλων (.abr)
+	Load brushes (.abr)	Φόρτωση πινέλων (.abr)
 	Mask All	Απόκρυψη όλων με μάσκα
 	Mask Options	Επιλογές μάσκας
 	Masking	Χρήση μασκών
@@ -1910,7 +1910,7 @@
 	Adds grain to the soft edges of the brush tip.	Προσθέτει κόκκο στις απαλές άκρες του πινέλου.
 	Adjust for Zoom	Προσαρμογή στη μεγέθυνση
 	Adjustment visible	Η προσαρμογή είναι ορατή
-	Adobe PDF Presets…	Προεπιλογές Adobe PDF…
+	PDF Presets…	Προεπιλογές PDF…
 	Adobe RGB (1998) compatible	Συμβατό με Adobe RGB (1998)
 	Advanced Blending	Σύνθετες επιλογές ανάμειξης
 	After (X)	Μετά (X)
@@ -1925,7 +1925,7 @@
 	All Caps	Όλα κεφαλαία
 	All Slices	Όλες οι τομές
 	All User Slices	Όλες οι τομές χρήστη
-	All shortcuts reset to Photoshop defaults.	Όλες οι συντομεύσεις επανήλθαν στις προεπιλογές του Photoshop.
+	All shortcuts reset to defaults.	Όλες οι συντομεύσεις επανήλθαν στις προεπιλογές.
 	Alternates for Current Selection	Εναλλακτικοί χαρακτήρες για την τρέχουσα επιλογή
 	Altitude	Υψόμετρο
 	Always	Πάντα
@@ -2654,9 +2654,9 @@
 	Patch:	Επιδιόρθωση:
 	Path Blur	Θόλωση διαδρομής
 	Path Blur…	Θόλωση διαδρομής…
-	Path to Illustrator…	Διαδρομή προς Illustrator…
+	Path to AI File…	Διαδρομή σε αρχείο AI…
 	Path:	Διαδρομή:
-	Paths to Illustrator	Διαδρομές σε Illustrator
+	Paths to AI File	Διαδρομές σε αρχείο AI
 	Pattern Preview	Προεπισκόπηση μοτίβου
 	Perceptual	Αντιληπτικό
 	Performance	Επιδόσεις
@@ -3288,8 +3288,8 @@ cameraRaw	Yellow	Κίτρινο
 	300%	300%
 	50% Gray	50% γκρι
 	75%	75%
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Ενσωματωμένο
+	Adobe RGB (1998)	Adobe RGB (1998)
 	Android 1080p	Android 1080p
 	Apple Watch 45mm	Apple Watch 45mm
 	Black Matte	Μαύρο ματ
@@ -3297,7 +3297,7 @@ cameraRaw	Yellow	Κίτρινο
 	Color…	Χρώμα…
 	Cone (Inverted)	Κώνος (αντεστραμμένος)
 	Could not open	Δεν ήταν δυνατό το άνοιγμα
-	Default Photoshop Size	Προεπιλεγμένο μέγεθος Photoshop
+	Default size	Προεπιλεγμένο μέγεθος
 	Diagonal (Descending)	Διαγώνιος (φθίνουσα)
 	DirectX 12	DirectX 12
 	Display p3	Display P3

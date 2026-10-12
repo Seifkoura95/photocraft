@@ -142,7 +142,7 @@ pub fn parse(data: &[u8]) -> Result<Vec<GrdGradient>> {
     }
     let version = data.get(4..6).map(|b| u16::from_be_bytes([b[0], b[1]])).ok_or(PsdError::UnexpectedEof { offset: 4, needed: 2 })?;
     if version != 5 {
-        return Err(PsdError::Unsupported(format!("gradient file version {version} (only version 5, Photoshop 6 and later)")));
+        return Err(PsdError::Unsupported(format!("gradient file version {version} (only version 5 is supported)")));
     }
     let (vd, _) = VersionedDescriptor::parse_prefix(data.get(6..).unwrap_or_default())?;
     let out: Vec<GrdGradient> = list(&vd.descriptor, "GrdL")

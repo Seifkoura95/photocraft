@@ -56,7 +56,7 @@
 	Layer Comps to Files…	Kompozycje warstw do plików…
 	Color Lookup Tables…	Tablice wyszukiwania kolorów…
 	Data Sets as Files…	Zestawy danych jako pliki…
-	Paths to Illustrator…	Ścieżki do Illustratora…
+	Paths to AI File…	Ścieżki do pliku AI…
 	Render Video…	Renderuj wideo…
 	Generate	Generuj
 	Image Assets	Zasoby obrazów
@@ -756,7 +756,7 @@
 	All Caps	Wszystkie wersaliki
 	All Slices	Wszystkie plasterki
 	All User Slices	Wszystkie plasterki użytkownika
-	All shortcuts reset to Photoshop defaults.	Wszystkie skróty przywrócono do ustawień domyślnych Photoshopa.
+	All shortcuts reset to defaults.	Wszystkie skróty przywrócono do ustawień domyślnych.
 	Alt	Alt
 	Always use pressure for opacity	Zawsze używaj nacisku do krycia
 	Always use pressure for size	Zawsze używaj nacisku do rozmiaru
@@ -1075,7 +1075,7 @@
 	Ignore All	Ignoruj wszystko
 	Image Size	Rozmiar obrazu
 	Import Brushes…	Importuj pędzle…
-	Import Photoshop brushes (.abr)	Importuj pędzle Photoshopa (.abr)
+	Import brushes (.abr)	Importuj pędzle (.abr)
 	Import Presets	Importuj ustawienia wstępne
 	Imported	Zaimportowano
 	Indent First	Wcięcie pierwszego wiersza
@@ -1125,7 +1125,7 @@
 	Liquify is not open	Skraplanie nie jest otwarte
 	Load	Wczytaj
 	Load 3D LUT…	Wczytaj 3D LUT…
-	Load Photoshop brushes (.abr)	Wczytaj pędzle Photoshopa (.abr)
+	Load brushes (.abr)	Wczytaj pędzle (.abr)
 	Load channel as selection	Wczytaj kanał jako zaznaczenie
 	Load…	Wczytaj…
 	Localized Color Clusters	Zlokalizowane skupiska kolorów
@@ -1517,7 +1517,7 @@
 	Current Tool	Bieżące narzędzie
 	Custom Shape Tool	Narzędzie Kształt niestandardowy
 	Cyans	Cyjany
-	Default Photoshop Size	Domyślny rozmiar Photoshopa
+	Default size	Domyślny rozmiar
 	Delete Workspace	Usuń obszar roboczy
 	Diamond	Romb
 	Dimensions:	Wymiary:
@@ -1716,8 +1716,7 @@
 
 # Preferences (labels are generated from the setting names)
 	Additional plugins folder	Dodatkowy folder wtyczek
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Wbudowany
 	Allow agent control	Zezwalaj na sterowanie przez agentów
 	Allow scripts to connect	Zezwalaj skryptom na połączenie
 	Always	Zawsze
@@ -2187,8 +2186,8 @@
 	Roman Hanging Punctuation	Wiszące znaki interpunkcyjne (łacińskie)
 	Avoid Widows/Orphans	Unikaj wdów i sierot
 	Compose	Skład
-	Adobe Single-line Composer	Skład jednowierszowy Adobe
-	Adobe Every-line Composer	Skład wielowierszowy Adobe
+	Single-line Composer	Skład jednowierszowy
+	Every-line Composer	Skład wielowierszowy
 	Justification	Justowanie
 	Word Spacing	Odstępy między wyrazami
 	Letter Spacing	Odstępy między literami
@@ -2203,7 +2202,7 @@
 	Symbols	Symbole
 	Punctuation	Interpunkcja
 	Path:	Ścieżka:
-	Path to Illustrator…	Ścieżka do Illustratora…
+	Path to AI File…	Ścieżka do pliku AI…
 	Make Work Path	Utwórz ścieżkę roboczą
 	Make Selection	Utwórz zaznaczenie
 	Fill Path	Wypełnij ścieżkę
@@ -2441,7 +2440,7 @@
 	Intersect with	Część wspólna z
 	Capture Comp	Przechwyć kompozycję
 	No Layer Comps	Brak kompozycji warstw
-	Adobe PDF Presets…	Ustawienia wstępne Adobe PDF…
+	PDF Presets…	Ustawienia wstępne PDF…
 	3D…	3D…
 	Technology Previews…	Podglądy technologii…
 	Background from Layer	Tło z warstwy
@@ -2840,7 +2839,7 @@ cameraRaw	Roughness	Chropowatość
 	Layer Comps to Files	Kompozycje warstw do plików
 	Color Lookup Tables	Tablice wyszukiwania kolorów
 	Data Sets as Files	Zestawy danych jako pliki
-	Paths to Illustrator	Ścieżki do Illustratora
+	Paths to AI File	Ścieżki do pliku AI
 	Render Video	Renderuj wideo
 	Place Embedded	Umieść osadzony
 	Place Linked	Umieść połączony

@@ -16,6 +16,8 @@ corpus = []
 default = []
 serde = ["dep:serde"]
 testgen = []
+# SimpleHub build: files this crate writes name Simple Photo as their writer.
+simplehub = []
 
 [dependencies]
 thiserror = { workspace = true }

@@ -52,7 +52,7 @@
 	Layer Comps to Files…	Layer Comp ke Berkas…
 	Color Lookup Tables…	Tabel Color Lookup…
 	Data Sets as Files…	Data Set sebagai Berkas…
-	Paths to Illustrator…	Path ke Illustrator…
+	Paths to AI File…	Path ke File AI…
 	Render Video…	Render Video…
 	Generate	Generate
 	Image Assets	Aset Gambar
@@ -737,7 +737,7 @@
 	All Caps	Huruf Kapital Semua
 	All Slices	Semua Slice
 	All User Slices	Semua Slice Pengguna
-	All shortcuts reset to Photoshop defaults.	Semua pintasan direset ke default Photoshop.
+	All shortcuts reset to defaults.	Semua pintasan direset ke default.
 	Alt	Alt
 	Alt-click to define a source point to clone from	Alt-klik untuk menentukan titik sumber yang mau di-clone
 	Always use pressure for opacity	Selalu pakai tekanan untuk opasitas
@@ -1053,7 +1053,7 @@
 	Ignore All	Abaikan Semua
 	Image Size	Ukuran Gambar
 	Import Brushes…	Impor Kuas…
-	Import Photoshop brushes (.abr)	Impor kuas Photoshop (.abr)
+	Import brushes (.abr)	Impor kuas (.abr)
 	Import Presets	Impor Preset
 	Imported	Diimpor
 	Indent First	Indentasi Pertama
@@ -1103,7 +1103,7 @@
 	Liquify is not open	Liquify tidak terbuka
 	Load	Muat
 	Load 3D LUT…	Muat 3D LUT…
-	Load Photoshop brushes (.abr)	Muat kuas Photoshop (.abr)
+	Load brushes (.abr)	Muat kuas (.abr)
 	Load channel as selection	Muat channel sebagai seleksi
 	Load…	Muat…
 	Localized Color Clusters	Klaster Warna Lokal
@@ -1493,7 +1493,7 @@
 	Current Tool	Alat Saat Ini
 	Custom Shape Tool	Alat Bentuk Kustom
 	Cyans	Cyan
-	Default Photoshop Size	Ukuran Default Photoshop
+	Default size	Ukuran Default
 	Delete Workspace	Hapus Ruang Kerja
 	Diamond	Diamond
 	Dimensions:	Dimensi:
@@ -1686,8 +1686,7 @@
 @plural	{n} layer|{n} layers	{n} layer
 @plural	Group · {n} layer|Group · {n} layers	Grup · {n} layer
 	Additional plugins folder	Folder plugin tambahan
-	Adobe	Adobe
-	Adobe rgb	Adobe RGB
+	Built-in	Bawaan
 	Allow agent control	Izinkan kontrol agen
 	Allow scripts to connect	Izinkan skrip terhubung
 	Always	Selalu
@@ -2149,8 +2148,8 @@
 	Roman Hanging Punctuation	Tanda Baca Menggantung Roman
 	Avoid Widows/Orphans	Hindari Widow/Orphan
 	Compose	Komposisi
-	Adobe Single-line Composer	Adobe Single-line Composer
-	Adobe Every-line Composer	Adobe Every-line Composer
+	Single-line Composer	Single-line Composer
+	Every-line Composer	Every-line Composer
 	Justification	Justifikasi
 	Word Spacing	Spasi Kata
 	Letter Spacing	Spasi Huruf
@@ -2165,7 +2164,7 @@
 	Symbols	Simbol
 	Punctuation	Tanda Baca
 	Path:	Path:
-	Path to Illustrator…	Path ke Illustrator…
+	Path to AI File…	Path ke File AI…
 	Make Work Path	Buat Work Path
 	Make Selection	Buat Seleksi
 	Fill Path	Isi Path
@@ -2402,7 +2401,7 @@
 	Intersect with	Irisan dengan
 	Capture Comp	Tangkap Comp
 	No Layer Comps	Tidak Ada Layer Comp
-	Adobe PDF Presets…	Preset Adobe PDF…
+	PDF Presets…	Preset PDF…
 	3D…	3D…
 	Technology Previews…	Pratinjau Teknologi…
 	Background from Layer	Background dari Layer

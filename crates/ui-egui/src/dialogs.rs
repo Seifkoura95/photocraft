@@ -173,6 +173,7 @@ pub fn show(app: &mut PhotocraftApp, ctx: &egui::Context) {
                             ui.label("Image editing for SimpleHub. Layers, masks, adjustments, filters, brushes and native PSD.");
                             ui.add_space(6.0);
                             ui.label("Built on PhotoCraft, an open source image editor by the ArtCraft Team and the PhotoCraft contributors, used under the MIT or Apache 2.0 licence.");
+                            ui.label("Not affiliated with or endorsed by Adobe, Microsoft, Autodesk or Avid. Other product names are trademarks of their respective owners.");
                             ui.hyperlink_to("github.com/storytold/photocraft", "https://github.com/storytold/photocraft");
                         }
                         _ => {
